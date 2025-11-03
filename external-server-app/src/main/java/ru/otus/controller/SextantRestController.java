@@ -17,7 +17,7 @@ public class SextantRestController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         var gson = (Gson) req.getServletContext().getAttribute("gson");
-        CommercialService commercialService = (CommercialService) req.getServletContext()
+        var commercialService = (CommercialService) req.getServletContext()
                 .getAttribute("commercialService");
 
         var buyRequestDto = gson.fromJson(req.getReader(), BuyRequestDto.class);

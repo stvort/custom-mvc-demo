@@ -5,21 +5,22 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 import ru.otus.dto.BuyRequestDto;
 import ru.otus.services.CommercialService;
 
 import java.io.IOException;
 
-public class AstrolabeRestController extends HttpServlet {
+@RequiredArgsConstructor
+public class SextantRestController extends HttpServlet {
+
+    private final Gson gson;
+    private final CommercialService commercialService;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        var gson = (Gson) req.getServletContext().getAttribute("gson");
-        var commercialService = (CommercialService) req.getServletContext()
-                .getAttribute("commercialService");
-
         var buyRequestDto = gson.fromJson(req.getReader(), BuyRequestDto.class);
-        commercialService.sellAstrolabe(buyRequestDto.getCount());
+        commercialService.sellSextant(buyRequestDto.getCount());
         resp.setStatus(201);
     }
 }

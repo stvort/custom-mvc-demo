@@ -6,7 +6,7 @@
     <groupId>ru.otus</groupId>
     <artifactId>external-server-app</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>external-server-app Maven Webapp</name>
+    <name>external-server-app</name>
 
     <packaging>war</packaging>
 

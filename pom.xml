@@ -11,7 +11,9 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>common-lib</module>
         <module>external-server-app</module>
         <module>internal-server-app</module>
+        <module>single-servlet-app</module>
     </modules>
 </project>

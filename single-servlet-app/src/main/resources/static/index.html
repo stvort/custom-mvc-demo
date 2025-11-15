@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Астролябии и секстанты онлайн</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        function buy(itemApiPath, itemName) {
+            fetch(`api/${itemApiPath}`, {
+                method: 'POST',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({count: 1})})
+            .then(rawResponse => alert(`Ваш адрес вычислили по IP и отправили по нему ${itemName}! Спасибо за покупку!`))
+        }
+
+        function buyAstrolabe() {
+            buy('astrolabe', 'Астролябию')
+        }
+
+        function buySextant() {
+            buy('sextant', 'Секстант')
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Астролябии и секстанты онлайн</h1>
+        <a href="reports.html"><button class="nav-button">Отчетошная</button></a>
+    </header>
+    <div class="content">
+        <div class="block" id="block1">
+            <h2>Астролябии</h2>
+            <p>
+                Астролябия — это древний инструмент, использовавшийся астрономами и навигаторами для измерения углов между небесными телами и горизонтом.
+                <br/><br/>
+                Она состоит из плоской диска с градуировкой и подвижной стрелки, называемой альтезой. Астролябии использовались для определения времени, широты и долготы, а также для навигации в море.
+                <br/><br/>
+                Этот инструмент был особенно популярен в средние века и стал основой для многих других астрономических приборов.
+                <br/><br/>
+                Астролябия позволяет пользователю проводить наблюдения за звездами и планетами, что делает её важным инструментом в астрономии и навигации.
+                <br/><br/>
+                <img style="width: 100%" src="astrolabe.jpg"/>
+                <br/><br/>
+                <button type="button" onclick="buyAstrolabe()">Купить астролябию</button>
+            </p>
+        </div>
+        <div class="block" id="block2">
+            <h2>Секстанты</h2>
+            <p>
+                Секстант — это навигационный инструмент, используемый для измерения углов между небесными телами и горизонтом.
+                <br/><br/>
+                Он был разработан в 18 веке и стал важным инструментом для мореплавателей. Секстант позволяет точно определять широту и долготу, что делает его незаменимым для навигации на море.
+                <br/><br/>
+                Устройство состоит из полукруга с градуировкой и подвижной линейкой, которая позволяет измерять углы. Секстанты использовались для определения местоположения кораблей и для астрономических наблюдений.
+                <br/><br/>
+                Этот инструмент значительно улучшил безопасность мореплавания и открыл новые горизонты для исследователей.
+                <br/><br/>
+                <img style="width: 100%" src="sextant.jpg"/>
+                <br/><br/>
+                <button type="button" onclick="buySextant()">Купить секстант</button>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
